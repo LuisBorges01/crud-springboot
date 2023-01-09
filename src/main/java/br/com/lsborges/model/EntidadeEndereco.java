@@ -7,20 +7,23 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Endereco implements Serializable{
+public class EntidadeEndereco implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "pessoa_id")
-	private Person person;
+	private EntidadePessoa person;
 		
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(name = "zipCode")
 	private String zipCode;
@@ -31,19 +34,16 @@ public class Endereco implements Serializable{
 	@Column(name = "number")
 	private String number;
 	
-		
 	
-	public Endereco(String zipCode, String place, String city, String number) {
+
+	public EntidadeEndereco(EntidadePessoa person, Long id, String zipCode, String place, String city, String number) {
+		this.person = person;
+		this.id = id;
 		this.zipCode = zipCode;
 		this.place = place;
 		this.city = city;
 		this.number = number;
 	}
-
-	
-	public Endereco(List<Endereco> endereco) {}
-
-
 	public String getCep() {
 		return zipCode;
 	}
@@ -79,11 +79,11 @@ public class Endereco implements Serializable{
 		this.number = number;
 	}
 
-	public Person getPerson() {
+	public EntidadePessoa getPerson() {
 		return person;
 	}
 
-	public void setPerson(Person person) {
+	public void setPerson(EntidadePessoa person) {
 		this.person = person;
 	}
 	

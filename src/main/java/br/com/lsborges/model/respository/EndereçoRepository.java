@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.lsborges.model.Endereco;
+import br.com.lsborges.model.EntidadeEndereco;
 
-public interface EndereçoRepository extends JpaRepository<Endereco, Long>{
+public interface EndereçoRepository extends JpaRepository<EntidadeEndereco, Long>{
 
-	void save(List<Endereco> endereço);
+	void save(List<EntidadeEndereco> endereço);
 
 }
