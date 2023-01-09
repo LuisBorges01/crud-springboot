@@ -1,13 +1,13 @@
 package br.com.lsborges.DTO.Config.Response;
 
-public class EnderecoResponse {
+public class ResponseEndereco {
 	 private Long id;
 	   private String city;
 	    private Long zipCode;
 	    private String place;
 	    private String number;
 	    
-		public EnderecoResponse(Long id, String city, Long zipCode, String place, String number) {
+		public ResponseEndereco(Long id, String city, Long zipCode, String place, String number) {
 			this.id = id;
 			this.city = city;
 			this.zipCode = zipCode;

@@ -19,10 +19,11 @@ public class PersonMapper {
 	@Autowired
     private  ModelMapper mapper;
 
+	/**/
     public EntidadePessoa toPerson(RequestPerson request) { /*Request to EntidadePerson*/
     	return mapper.map(request, EntidadePessoa.class);
     }
-
+   /**/
     public ResponsePerson toPersonResponse(EntidadePessoa person) {/*EntidadePerson to PersonResponse(getters)*/
         return mapper.map(person, ResponsePerson.class);
     }

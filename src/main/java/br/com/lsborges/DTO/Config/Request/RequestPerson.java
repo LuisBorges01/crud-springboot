@@ -1,18 +1,22 @@
 package br.com.lsborges.DTO.Config.Request;
 
-import br.com.lsborges.DTO.Config.Response.EnderecoResponse;
+import java.util.List;
+
+import br.com.lsborges.DTO.Config.Response.ResponseEndereco;
 
 public class RequestPerson {
 	
     private String name;
     private String birthdate;
-    private EnderecoResponse address;
+    private ResponseEndereco mainAddress;
+    private List<ResponseEndereco> Address;
     
-    
-	public RequestPerson(Long id, String name, String birthdate, EnderecoResponse address) {
+   
+	public RequestPerson(String name, String birthdate, ResponseEndereco mainAddress, List<ResponseEndereco> address) {
 		this.name = name;
 		this.birthdate = birthdate;
-		this.address = address;
+		this.mainAddress = mainAddress;
+		Address = address;
 	}
 	
 	public String getName() {
@@ -27,13 +31,21 @@ public class RequestPerson {
 	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
 	}
-	public EnderecoResponse getAddress() {
-		return address;
-	}
-	public void setAddress(EnderecoResponse address) {
-		this.address = address;
-	}
-    
-    
 
+	public ResponseEndereco getMainAddress() {
+		return mainAddress;
+	}
+
+	public void setMainAddress(ResponseEndereco mainAddress) {
+		this.mainAddress = mainAddress;
+	}
+
+	public List<ResponseEndereco> getAddress() {
+		return Address;
+	}
+
+	public void setAddress(List<ResponseEndereco> address) {
+		Address = address;
+	}
+    
 }

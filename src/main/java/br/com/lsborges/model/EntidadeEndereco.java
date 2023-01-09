@@ -35,7 +35,8 @@ public class EntidadeEndereco implements Serializable{
 	private String number;
 	
 	
-
+	public EntidadeEndereco() {}
+	
 	public EntidadeEndereco(EntidadePessoa person, Long id, String zipCode, String place, String city, String number) {
 		this.person = person;
 		this.id = id;
