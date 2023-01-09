@@ -6,22 +6,19 @@ public class ResponsePerson {
 	  private Long id;
 	    private String name;
 	    private String birthdate;
-	    public List<ResponseEndereco> address;
 	    public ResponseEndereco mainAddress;
+	    public List<ResponseEndereco> Address;
 	    
+
 	    
-	    
-	    
-	    
-		public ResponsePerson(Long id, String name, String birthdate, List<ResponseEndereco> address,
-				ResponseEndereco mainAddress) {
+		public ResponsePerson(Long id, String name, String birthdate, ResponseEndereco mainAddress,
+				List<ResponseEndereco> address) {
 			this.id = id;
 			this.name = name;
 			this.birthdate = birthdate;
-			this.address = address;
 			this.mainAddress = mainAddress;
+			Address = address;
 		}
-		
 		
 		public Long getId() {
 			return id;
@@ -41,16 +38,19 @@ public class ResponsePerson {
 		public void setBirthdate(String birthdate) {
 			this.birthdate = birthdate;
 		}
-		public List<ResponseEndereco> getAddress() {
-			return address;
-		}
-		public void setAddress(List<ResponseEndereco> address) {
-			this.address = address;
-		}
 		public ResponseEndereco getMainAddress() {
 			return mainAddress;
 		}
 		public void setMainAddress(ResponseEndereco mainAddress) {
 			this.mainAddress = mainAddress;
+		}
+
+		public List<ResponseEndereco> getAddress() {
+			return Address;
+		}
+
+		public void setAddress(List<ResponseEndereco> address) {
+			Address = address;
 		} 
+		
 }

@@ -1,11 +1,13 @@
 package br.com.lsborges.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,8 +23,8 @@ public class EntidadePessoa implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 
-	@OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
-	private List<EntidadeEndereco> Address;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<EntidadeEndereco> Address = new ArrayList<>();
     private EntidadeEndereco mainAddress;
  
     @Id
@@ -50,7 +52,18 @@ public class EntidadePessoa implements Serializable{
 		this.birthDate = birthDate;
 	}
 	
-	
+	public List<EntidadeEndereco> getAddress() {
+		return Address;
+	}
+	public void setAddress(List<EntidadeEndereco> address) {
+		Address = address;
+	}
+	public EntidadeEndereco getMainAddress() {
+		return mainAddress;
+	}
+	public void setMainAddress(EntidadeEndereco mainAddress) {
+		this.mainAddress = mainAddress;
+	}
 	public EntidadePessoa(List<EntidadeEndereco> address, EntidadeEndereco mainAddress, Long id, String name,
 			String birthDate) {
 		Address = address;

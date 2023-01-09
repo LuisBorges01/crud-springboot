@@ -9,16 +9,15 @@ public class RequestPerson {
     private String name;
     private String birthdate;
     private ResponseEndereco mainAddress;
-    private List<ResponseEndereco> Address;
+    private List<ResponseEndereco> address;
     
    
 	public RequestPerson(String name, String birthdate, ResponseEndereco mainAddress, List<ResponseEndereco> address) {
 		this.name = name;
 		this.birthdate = birthdate;
 		this.mainAddress = mainAddress;
-		Address = address;
+		this.address = address;
 	}
-	
 	public String getName() {
 		return name;
 	}
@@ -39,13 +38,12 @@ public class RequestPerson {
 	public void setMainAddress(ResponseEndereco mainAddress) {
 		this.mainAddress = mainAddress;
 	}
-
 	public List<ResponseEndereco> getAddress() {
-		return Address;
+		return address;
 	}
-
 	public void setAddress(List<ResponseEndereco> address) {
-		Address = address;
+		this.address = address;
 	}
-    
+	
+	
 }
