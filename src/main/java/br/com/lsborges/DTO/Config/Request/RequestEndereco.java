@@ -1,7 +1,7 @@
 package br.com.lsborges.DTO.Config.Request;
 
 
-public class RequestResponse {
+public class RequestEndereco {
 	
 	private String zipCode;
 	private String place;
@@ -10,7 +10,7 @@ public class RequestResponse {
 	
 	
 	
-	public RequestResponse(String zipCode, String place, String city, String number) {
+	public RequestEndereco(String zipCode, String place, String city, String number) {
 		this.zipCode = zipCode;
 		this.place = place;
 		this.city = city;

@@ -13,12 +13,7 @@ public class RequestPerson {
     private String birthdate;
     private EntidadeEnderecoPrincipal mainAddress;
     private List<ResponseEndereco> address;
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 	public String getName() {
 		return name;
 	}
@@ -43,12 +38,15 @@ public class RequestPerson {
 	public void setAddress(List<ResponseEndereco> address) {
 		this.address = address;
 	}
-	public RequestPerson(Long id, String name, String birthdate, EntidadeEnderecoPrincipal mainAddress,
+	public RequestPerson(String name, String birthdate, EntidadeEnderecoPrincipal mainAddress,
 			List<ResponseEndereco> address) {
-		this.id = id;
 		this.name = name;
 		this.birthdate = birthdate;
 		this.mainAddress = mainAddress;
+		this.address = address;
+	}
+	
+	public RequestPerson(List<ResponseEndereco> address) {
 		this.address = address;
 	}
     
