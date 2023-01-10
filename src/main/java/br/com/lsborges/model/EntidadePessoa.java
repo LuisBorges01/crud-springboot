@@ -23,9 +23,9 @@ public class EntidadePessoa implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<EntidadeEndereco> Address = new ArrayList<>();
-    private EntidadeEndereco mainAddress;
+    private EntidadeEndereco mainAddress = new EntidadeEndereco();
  
     @Id
     @Column(name = "id")

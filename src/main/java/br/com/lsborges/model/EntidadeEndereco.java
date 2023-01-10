@@ -45,40 +45,6 @@ public class EntidadeEndereco implements Serializable{
 		this.city = city;
 		this.number = number;
 	}
-	public String getCep() {
-		return zipCode;
-	}
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	public void setCep(String zipCode) {
-		this.zipCode = zipCode;
-	}
-	public String getLogradouro() {
-		return place;
-	}
-	public void setLogradouro(String place) {
-		this.place = place;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getNumber() {
-		return number;
-	}
-	public void setNumber(String number) {
-		this.number = number;
-	}
 
 	public EntidadePessoa getPerson() {
 		return person;
@@ -86,6 +52,46 @@ public class EntidadeEndereco implements Serializable{
 
 	public void setPerson(EntidadePessoa person) {
 		this.person = person;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
 	}
 	
 

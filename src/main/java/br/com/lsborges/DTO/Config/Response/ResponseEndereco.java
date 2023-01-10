@@ -6,15 +6,6 @@ public class ResponseEndereco {
 	    private Long zipCode;
 	    private String place;
 	    private String number;
-	    
-		public ResponseEndereco(Long id, String city, Long zipCode, String place, String number) {
-			this.id = id;
-			this.city = city;
-			this.zipCode = zipCode;
-			this.place = place;
-			this.number = number;			
-		}
-
 		public Long getId() {
 			return id;
 		}
@@ -45,7 +36,13 @@ public class ResponseEndereco {
 		public void setNumber(String number) {
 			this.number = number;
 		}
-	    
-	    
+		public ResponseEndereco(Long id, String city, Long zipCode, String place, String number) {
+			this.id = id;
+			this.city = city;
+			this.zipCode = zipCode;
+			this.place = place;
+			this.number = number;
+		} 
 
+	    
 }

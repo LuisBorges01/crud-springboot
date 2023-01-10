@@ -7,17 +7,17 @@ public class ResponsePerson {
 	    private String name;
 	    private String birthdate;
 	    public ResponseEndereco mainAddress;
-	    public List<ResponseEndereco> Address;
+	    public List<ResponseEndereco> address;
 	    
 
 	    
-		public ResponsePerson(Long id, String name, String birthdate, ResponseEndereco mainAddress,
-				List<ResponseEndereco> address) {
+		public ResponsePerson(Long id, String name, String birthdate, List<ResponseEndereco> address,
+				ResponseEndereco mainAddress) {
 			this.id = id;
 			this.name = name;
 			this.birthdate = birthdate;
+			this.address = address;
 			this.mainAddress = mainAddress;
-			Address = address;
 		}
 		
 		public Long getId() {
@@ -46,11 +46,12 @@ public class ResponsePerson {
 		}
 
 		public List<ResponseEndereco> getAddress() {
-			return Address;
+			return address;
 		}
 
 		public void setAddress(List<ResponseEndereco> address) {
-			Address = address;
-		} 
+			this.address = address;
+		}
+		
 		
 }
