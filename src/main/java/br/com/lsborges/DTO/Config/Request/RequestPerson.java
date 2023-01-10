@@ -3,6 +3,7 @@ package br.com.lsborges.DTO.Config.Request;
 import java.util.List;
 
 import br.com.lsborges.DTO.Config.Response.ResponseEndereco;
+import br.com.lsborges.model.EntidadeEnderecoPrincipal;
 
 public class RequestPerson {
 	 private Long id;
@@ -10,7 +11,7 @@ public class RequestPerson {
 	
     private String name;
     private String birthdate;
-    private ResponseEndereco mainAddress;
+    private EntidadeEnderecoPrincipal mainAddress;
     private List<ResponseEndereco> address;
 	public Long getId() {
 		return id;
@@ -30,10 +31,10 @@ public class RequestPerson {
 	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
 	}
-	public ResponseEndereco getMainAddress() {
+	public EntidadeEnderecoPrincipal getMainAddress() {
 		return mainAddress;
 	}
-	public void setMainAddress(ResponseEndereco mainAddress) {
+	public void setMainAddress(EntidadeEnderecoPrincipal mainAddress) {
 		this.mainAddress = mainAddress;
 	}
 	public List<ResponseEndereco> getAddress() {
@@ -42,7 +43,7 @@ public class RequestPerson {
 	public void setAddress(List<ResponseEndereco> address) {
 		this.address = address;
 	}
-	public RequestPerson(Long id, String name, String birthdate, ResponseEndereco mainAddress,
+	public RequestPerson(Long id, String name, String birthdate, EntidadeEnderecoPrincipal mainAddress,
 			List<ResponseEndereco> address) {
 		this.id = id;
 		this.name = name;
@@ -50,6 +51,7 @@ public class RequestPerson {
 		this.mainAddress = mainAddress;
 		this.address = address;
 	}
+    
     
     
 }

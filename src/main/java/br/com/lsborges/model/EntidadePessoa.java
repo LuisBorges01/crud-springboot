@@ -6,6 +6,7 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -25,7 +26,9 @@ public class EntidadePessoa implements Serializable{
 
 	@OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<EntidadeEndereco> Address = new ArrayList<>();
-    private EntidadeEndereco mainAddress = new EntidadeEndereco();
+	
+    @Embedded
+    private EntidadeEnderecoPrincipal mainAddress;
  
     @Id
     @Column(name = "id")
@@ -58,14 +61,22 @@ public class EntidadePessoa implements Serializable{
 	public void setAddress(List<EntidadeEndereco> address) {
 		Address = address;
 	}
-	public EntidadeEndereco getMainAddress() {
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public EntidadeEnderecoPrincipal getMainAddress() {
 		return mainAddress;
 	}
-	public void setMainAddress(EntidadeEndereco mainAddress) {
+	public void setMainAddress(EntidadeEnderecoPrincipal mainAddress) {
 		this.mainAddress = mainAddress;
 	}
-	public EntidadePessoa(List<EntidadeEndereco> address, EntidadeEndereco mainAddress, Long id, String name,
+	public EntidadePessoa(List<EntidadeEndereco> address, EntidadeEnderecoPrincipal mainAddress, Long id, String name,
 			String birthDate) {
+		super();
 		Address = address;
 		this.mainAddress = mainAddress;
 		this.id = id;
